@@ -33,3 +33,4 @@ var age = 20;
 var sentence = "My name is ".concat(name, " and I am ").concat(age, " years old.\nI'm learning Typescript");
 console.log(sentence);
 /* In variable sentence of type string we have used string interpolation and it works well*/
+

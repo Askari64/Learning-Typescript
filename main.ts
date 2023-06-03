@@ -45,4 +45,3 @@ I'm learning Typescript`
 console.log(sentence);
 
 /* In variable sentence of type string we have used string interpolation and it works well*/
-
