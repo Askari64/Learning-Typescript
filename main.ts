@@ -136,3 +136,59 @@ sub2(100,20);
 
 //INTERFACE
 
+interface person {
+    firstName: string;
+    lastName: string;
+    age: number;
+}
+
+function Greet(person:person) {
+    let fullName: string = `${person.firstName} ${person.lastName}`
+    console.log(`Hello! My name is ${fullName} and I am ${age} years old.`);
+}
+
+let p = {
+    firstName: 'Askari',
+    lastName: 'Rizvi',
+    age: 20
+}
+Greet(p);
+
+// We created an interface person which is an object. Then we created a function Greet and passed param person of type person interface.
+//Then we created a new object p based on person interface and passed into the function Greet. Since p is based on interface person, it works well
+
+//CLASSES
+
+class Employee {
+    employeeName: string;
+
+    constructor(name: string) {
+        this.employeeName = name;
+    }
+
+    Greet() {
+        console.log(`Good Morning ${this.employeeName}!`);
+    }
+}
+
+//creating instance of class
+
+let emp1 = new Employee('Askari');
+console.log(emp1.employeeName);
+emp1.Greet();
+
+class Manager extends Employee {
+    constructor(managerName: string) {
+        super(managerName);
+    }
+
+    delegateWork() {
+        console.log(`Manager is delegating Work`);
+    }
+}
+
+let m1 = new Manager('Rizvi');
+m1.Greet();
+m1.delegateWork()
+console.log(m1.employeeName);
+//wont need this in react development anyways

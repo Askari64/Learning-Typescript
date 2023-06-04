@@ -1,5 +1,20 @@
 "use strict";
 //tsc filename is used to transpile .ts file to .js file as we have main.js transpiled from main.ts file i.e translated
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 //typescript thinks that the variable is redeclared
 var message = "Hello World"; // here let message: string = "Hello World"; means that variable message is of type string and storing string value "Hello World"
@@ -106,6 +121,44 @@ function sub2(num1, num2) {
 }
 sub2(35);
 sub2(100, 20);
-// num2:number =20 is default param so if only 1 param is passed then 2nd param will be 20 by default and if both are passed then 2nd param will
-//be of the passsed value rather than the default
-//INTERFACE
+function Greet(person) {
+    var fullName = "".concat(person.firstName, " ").concat(person.lastName);
+    console.log("Hello! My name is ".concat(fullName, " and I am ").concat(age, " years old."));
+}
+var p = {
+    firstName: 'Askari',
+    lastName: 'Rizvi',
+    age: 20
+};
+Greet(p);
+// We created an interface person which is an object. Then we created a function Greet and passed param person of type person interface.
+//Then we created a new object p based on person interface and passed into the function Greet. Since p is based on interface person, it works well
+//CLASSES
+var Employee = /** @class */ (function () {
+    function Employee(name) {
+        this.employeeName = name;
+    }
+    Employee.prototype.Greet = function () {
+        console.log("Good Morning ".concat(this.employeeName, "!"));
+    };
+    return Employee;
+}());
+//creating instance of class
+var emp1 = new Employee('Askari');
+console.log(emp1.employeeName);
+emp1.Greet();
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(managerName) {
+        return _super.call(this, managerName) || this;
+    }
+    Manager.prototype.delegateWork = function () {
+        console.log("Manager is delegating Work");
+    };
+    return Manager;
+}(Employee));
+var m1 = new Manager('Rizvi');
+m1.Greet();
+m1.delegateWork();
+console.log(m1.employeeName);
+//wont need this in react development anyways
