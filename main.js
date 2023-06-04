@@ -65,4 +65,47 @@ var multiType = 20;
 console.log('multiType = ', multiType);
 multiType = 'Askari';
 console.log('multiType = ', multiType);
-/*multiType variable has more than 1 type i.e number and string*/ 
+/*multiType variable has more than 1 type i.e number and string*/
+//FUNCTIONS
+function add(num1, num2) {
+    var addedNum = num1 + num2;
+    console.log(addedNum);
+    return addedNum;
+}
+add(57, 39);
+function multiply(num1, num2) {
+    var multipliedNum = num1 * num2;
+    console.log(multipliedNum);
+    return multipliedNum;
+}
+multiply(3546, 654);
+//in function add and multiply we have mentioned the return type of function. 
+// syntax is function name(param1:type, param2:type) : return type {function body}
+//OPTIONAL PARAM
+function sub(num1, num2) {
+    if (num2 === undefined) /*can also be if(num2) meaning if num2 is true or exists */ {
+        console.log('there is no 2nd parameter. \n', num1);
+        return num1;
+    }
+    else {
+        var subNum = num1 - num2;
+        console.log(num1, '-', num2, ' = ', subNum);
+        return subNum;
+    }
+}
+sub(65);
+sub(54, 27);
+// in function sub, num2 param is optional by adding '?' after param name it becomes undefined so we must handle it with an if else statement or truthy falsy
+//NOTE- Optional parameter always come after the required params
+//DEFAULT PARAM
+function sub2(num1, num2) {
+    if (num2 === void 0) { num2 = 20; }
+    var subNum = num1 - num2;
+    console.log(num1, '-', num2, ' = ', subNum);
+    return subNum;
+}
+sub2(35);
+sub2(100, 20);
+// num2:number =20 is default param so if only 1 param is passed then 2nd param will be 20 by default and if both are passed then 2nd param will
+//be of the passsed value rather than the default
+//INTERFACE
