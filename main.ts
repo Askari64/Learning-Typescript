@@ -45,3 +45,37 @@ I'm learning Typescript`
 console.log(sentence);
 
 /* In variable sentence of type string we have used string interpolation and it works well*/
+let n: null = null;
+let u: undefined = undefined;
+console.log(n);
+console.log(u);
+
+let arrNum: number[] = [1,3,6,8,5];
+
+console.log(arrNum.map((num) => {
+    return num;
+}))
+
+// we declare an array with syntax let varName: dataType[] = [array content];
+
+let person: [string, number] = ['Askari' , 20];
+console.log(person);
+// person is a tuple which stores string and number. the order and data type and number must always match the tuple type declared.
+
+enum Cars {Mercedes, Bently, Lamborghini, Ferrari, Dodge};
+
+let c: Cars = Cars.Lamborghini;
+console.log(c);
+c = Cars.Dodge;
+console.log(c);
+// Cars is an enumerated data type defined with keyword enum. enum datatype has syntax: enum dataTpeName {valuesToBePassed};
+//c is a variable of dataType Cars which stores value of one of the values from the dataType Cars
+//console.log(c) gives you the index of the Value of Cars instead of the Value itself. Index of enum starts from 0 by default
+
+let multiType: number | string = 20;
+console.log('multiType = ', multiType);
+multiType = 'Askari';
+console.log('multiType = ', multiType);
+
+/*multiType variable has more than 1 type i.e number and string*/
+
